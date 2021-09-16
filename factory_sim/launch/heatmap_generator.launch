@@ -8,7 +8,9 @@
         <arg name="y_pos" default="0.0"/>
         <arg name="z_pos" default="0.0"/>
 
-        <arg name="map_file" default="$(find factory_sim)/maps/not_lowres_map.yaml"/>
+        <arg name="map_file" default="$(find factory_sim)/maps/highres_map.yaml"/>
+        <arg name="very_highres_map_file" default="$(find factory_sim)/maps/very_highres_map.yaml"/>
+        <arg name="lowres_map_file" default="$(find factory_sim)/maps/lowres_map.yaml"/>
 
         <!-- Map server -->
         <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
