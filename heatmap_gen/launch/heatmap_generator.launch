@@ -1,0 +1,25 @@
+<launch>
+        <arg name="map_file" default="$(find heatmap_gen)/maps/vfeld1.yaml"/>
+        <arg name="debug" default="false" />
+        <arg name="gui" default="true" />
+        <arg name="pause" default="false" />
+
+        <arg name="x_pos" default="0.0"/>
+        <arg name="y_pos" default="0.0"/>
+        <arg name="z_pos" default="0.0"/>
+
+
+        <!-- Map server -->
+        <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+        
+        <node name="costmap_generator" pkg="heatmap_gen" type="costmap_generator" output="screen">
+                <rosparam file="$(find heatmap_gen)/config/costmap_params.yaml" command="load" ns="costmap/obstacles" />
+        </node>
+
+        <node name="heatmap_generator" pkg="heatmap_gen" type="heatmap_generator" output="screen">
+                <param name="aggregation_time" value="60" />
+        </node>
+
+        <node pkg="tf" type="static_transform_publisher" name="sensor_link_broadcaster" args="0 0 0 0 0 0 world map 100" />
+        <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find heatmap_gen)/rviz/costmap.rviz"/> 
+</launch>

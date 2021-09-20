@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>factory_sim</name>
+  <name>heatmap_gen</name>
   <version>0.0.0</version>
-  <description>The factory_sim package</description>
+  <description>The heatmap_gen package</description>
 
   <maintainer email="hsd@ipa.fraunhofer.de">ipa-hsd</maintainer>
 
