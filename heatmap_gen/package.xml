@@ -15,8 +15,4 @@
   <depend>tf</depend>
   <exec_depend>map_server</exec_depend>
   <exec_depend>move_base</exec_depend>
-
-  <export>
-    <gazebo_ros gazebo_model_path="${prefix}/models"/>
-  </export>
 </package>
