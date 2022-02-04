@@ -17,7 +17,7 @@
         </node>
 
         <node name="heatmap_generator" pkg="heatmap_gen" type="heatmap_generator" output="screen">
-                <param name="aggregation_time" value="60" />
+                <param name="aggregation_time" value="5" />
         </node>
 
         <node pkg="tf" type="static_transform_publisher" name="sensor_link_broadcaster" args="0 0 0 0 0 0 world map 100" />
