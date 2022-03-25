@@ -1,5 +1,5 @@
 # Heatmap generator
-This package created aggregated heatmap from 2D laser scans. This package is tested with upto 4 laser scanners.
+This package creates costmaps from 2D laser scans. This package is tested with upto 10 laser scanners.
 ![](./docs/out.png)
 
 ## Usage
